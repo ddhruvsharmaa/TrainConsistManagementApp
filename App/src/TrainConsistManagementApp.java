@@ -1,16 +1,29 @@
 import java.util.*;
 
+class Bogie {
+    String id;
+    int capacity;
+
+    Bogie(String id, int capacity) {
+        this.id = id;
+        this.capacity = capacity;
+    }
+}
+
 public class TrainConsistManagementApp {
 
     public static void main(String[] args) {
 
-        Map<String, Integer> map = new HashMap<>();
+        List<Bogie> list = new ArrayList<>();
 
-        map.put("B1", 100);
-        map.put("B2", 80);
+        list.add(new Bogie("B1", 100));
+        list.add(new Bogie("B2", 80));
+        list.add(new Bogie("B3", 120));
 
-        for (String key : map.keySet()) {
-            System.out.println(key + " Capacity: " + map.get(key));
+        list.sort((a, b) -> a.capacity - b.capacity);
+
+        for (Bogie b : list) {
+            System.out.println(b.id + " " + b.capacity);
         }
     }
 }
