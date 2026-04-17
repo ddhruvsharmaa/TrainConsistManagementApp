@@ -1,17 +1,27 @@
-public class TrainConsistManagementApp {
+import java.util.*;
 
-    static boolean validateTrainId(String id) {
-        return id.matches("TR\\d+");
+class Bogie {
+    String type;
+    int load;
+
+    Bogie(String type, int load) {
+        this.type = type;
+        this.load = load;
     }
+}
 
+public class TrainConsistManagementApp {
     public static void main(String[] args) {
 
-        String trainId = "TR101";
+        List<Bogie> list = Arrays.asList(
+                new Bogie("Goods", 500),
+                new Bogie("Goods", 1200)
+        );
 
-        if (validateTrainId(trainId)) {
-            System.out.println("Valid Train ID");
-        } else {
-            System.out.println("Invalid Train ID");
+        for (Bogie b : list) {
+            if (b.type.equals("Goods") && b.load > 1000) {
+                System.out.println("Unsafe Bogie");
+            }
         }
     }
 }
