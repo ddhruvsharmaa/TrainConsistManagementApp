@@ -1,26 +1,17 @@
-import java.util.*;
-
-class Bogie {
-    int capacity;
-
-    Bogie(int capacity) {
-        this.capacity = capacity;
-    }
-}
-
 public class TrainConsistManagementApp {
+
+    static boolean validateTrainId(String id) {
+        return id.matches("TR\\d+");
+    }
+
     public static void main(String[] args) {
 
-        List<Bogie> list = Arrays.asList(
-                new Bogie(100),
-                new Bogie(80),
-                new Bogie(120)
-        );
+        String trainId = "TR101";
 
-        int total = list.stream()
-                .map(b -> b.capacity)
-                .reduce(0, Integer::sum);
-
-        System.out.println("Total Seats: " + total);
+        if (validateTrainId(trainId)) {
+            System.out.println("Valid Train ID");
+        } else {
+            System.out.println("Invalid Train ID");
+        }
     }
 }
