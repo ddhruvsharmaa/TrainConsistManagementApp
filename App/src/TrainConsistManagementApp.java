@@ -2,8 +2,7 @@ import java.util.*;
 import java.util.stream.*;
 
 class Bogie {
-    String id;
-    String type;
+    String id, type;
 
     Bogie(String id, String type) {
         this.id = id;
@@ -20,10 +19,9 @@ public class TrainConsistManagementApp {
                 new Bogie("B3", "Passenger")
         );
 
-        List<Bogie> passenger = list.stream()
-                .filter(b -> b.type.equals("Passenger"))
-                .collect(Collectors.toList());
+        Map<String, List<Bogie>> grouped =
+                list.stream().collect(Collectors.groupingBy(b -> b.type));
 
-        passenger.forEach(b -> System.out.println(b.id));
+        System.out.println(grouped);
     }
 }
