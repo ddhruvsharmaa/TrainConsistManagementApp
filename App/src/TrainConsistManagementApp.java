@@ -4,12 +4,13 @@ public class TrainConsistManagementApp {
 
     public static void main(String[] args) {
 
-        Set<String> bogies = new LinkedHashSet<>();
+        Map<String, Integer> map = new HashMap<>();
 
-        bogies.add("B3");
-        bogies.add("B1");
-        bogies.add("B2");
+        map.put("B1", 100);
+        map.put("B2", 80);
 
-        System.out.println("Insertion Order: " + bogies);
+        for (String key : map.keySet()) {
+            System.out.println(key + " Capacity: " + map.get(key));
+        }
     }
 }
