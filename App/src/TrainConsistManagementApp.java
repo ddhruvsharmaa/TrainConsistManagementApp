@@ -1,13 +1,15 @@
+import java.util.*;
+
 public class TrainConsistManagementApp {
 
     public static void main(String[] args) {
 
-        System.out.println("Train Initialized");
+        List<String> bogies = new ArrayList<>();
 
-        String trainName = "Express-101";
-        int totalBogies = 0;
+        bogies.add("B1");
+        bogies.add("B2");
+        bogies.add("B3");
 
-        System.out.println("Train Name: " + trainName);
-        System.out.println("Total Bogies: " + totalBogies);
+        System.out.println("Bogies List: " + bogies);
     }
 }
