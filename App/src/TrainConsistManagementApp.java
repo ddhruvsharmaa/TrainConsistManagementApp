@@ -4,12 +4,12 @@ public class TrainConsistManagementApp {
 
     public static void main(String[] args) {
 
-        List<String> bogies = new ArrayList<>();
+        Set<String> bogies = new HashSet<>();
 
         bogies.add("B1");
         bogies.add("B2");
-        bogies.add("B3");
+        bogies.add("B1"); // duplicate
 
-        System.out.println("Bogies List: " + bogies);
+        System.out.println("Unique Bogies: " + bogies);
     }
 }
